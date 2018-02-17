@@ -10,7 +10,7 @@ class PositionSerializer(serializers.ModelSerializer):
 class CitySerializer(serializers.ModelSerializer):
 
 	id = serializers.CharField(max_length = 20, required = False)
-	position = PositionSerializer()
+	position = PositionSerializer(required = False)
 
 	class Meta:
 		model = City

@@ -28,6 +28,6 @@ from ft.api.views import *
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
 	url(r'^rest-auth/', include('rest_auth.urls')),
-	url(r'^api/loc/(?P<lat>[0-9.]+)/(?P<lng>[0-9.]+)/(?P<city>[A-Za-z]+)', locationSave),
-	url(r'^api/city/(?P<name>[A-Za-z]+)/', allcity )
+	url(r'^api/loc/', LocationSaveViewSet.as_view(),name="location-save"),
+	url(r'^api/city/(?P<name>[A-Za-z]+)/', AllCityViewSet.as_view({'get': 'list'}),name="all-city" )
 ]
